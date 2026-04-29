@@ -1,0 +1,14 @@
+install.packages("dplyr")
+library(dplyr)
+student_df<-data.frame(
+  id=c(1,2,3,4,5),
+  name=c("aman","riya","john","sara","alex"),
+  age=c(20,21,19,22,23),
+  department=c("CS","IT","CS","EC","IT"),
+  marks=c(85,90,78,88,91)
+)
+result<-student_df%>%
+  filter(marks>80)%>%
+  mutate(status="pass")%>%
+  arrange(desc(marks))
+print(result)
